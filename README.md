@@ -1,21 +1,21 @@
 # KAFKA
 
 
-Generate a random UUID for Kafka log directory initialization (used in KRaft mode)
+1.Generate a random UUID for Kafka log directory initialization (used in KRaft mode)
 .\bin\windows\kafka-storage.bat random-uuid
 
- Format the Kafka log directory using the generated UUID and server properties (initializes the KRaft metadata log)
+ 2.Format the Kafka log directory using the generated UUID and server properties (initializes the KRaft metadata log)
 .\bin\windows\kafka-storage.bat format -t SnyplhxITWGvjAzZx_9NoQ -c .\config\kraft\server.properties
 
-# Start the Kafka server in KRaft mode using the specified configuration
+3. Start the Kafka server in KRaft mode using the specified configuration
 .\bin\windows\kafka-server-start.bat .\config\kraft\server.properties
 
-# Create a new Kafka topic named "test" with 1 partition and a replication factor of 1
+4. Create a new Kafka topic named "test" with 1 partition and a replication factor of 1
 .\bin\windows\kafka-topics.bat --create --topic test --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
-# Start a Kafka console producer to send messages to "test"
+5. Start a Kafka console producer to send messages to "test"
 .\bin\windows\kafka-console-producer.bat --topic test --bootstrap-server localhost:9092
 
-# Start a Kafka console consumer to read messages from "testc" from the beginning
+6. Start a Kafka console consumer to read messages from "testc" from the beginning
 .\bin\windows\kafka-console-consumer.bat --topic test --from-beginning --bootstrap-server localhost:9092
 
 
@@ -27,11 +27,11 @@ Generate a random UUID for Kafka log directory initialization (used in KRaft mod
 
 
 
-# produce msg key-value pair
+- produce msg key-value pair
 .\bin\windows\kafka-console-producer.bat --bootstrap-server localhost:9092 --topic topic-user --property "parse.key=true" --property "key.separator=:"
 
 
-# Consume msg key-value pair
+- Consume msg key-value pair
 .\bin\windows\kafka-console-consumer.bat --topic topic-user --from-beginning --bootstrap-server localhost:9092 --property print.key=true --property print.value=true
 
 
