@@ -1,10 +1,10 @@
 # KAFKA
 
 
-# Generate a random UUID for Kafka log directory initialization (used in KRaft mode)
+Generate a random UUID for Kafka log directory initialization (used in KRaft mode)
 .\bin\windows\kafka-storage.bat random-uuid
 
-# Format the Kafka log directory using the generated UUID and server properties (initializes the KRaft metadata log)
+ Format the Kafka log directory using the generated UUID and server properties (initializes the KRaft metadata log)
 .\bin\windows\kafka-storage.bat format -t SnyplhxITWGvjAzZx_9NoQ -c .\config\kraft\server.properties
 
 # Start the Kafka server in KRaft mode using the specified configuration
